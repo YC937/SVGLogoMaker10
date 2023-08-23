@@ -5,7 +5,7 @@ describe("Shape", () => {
     it("should set shape to triangle given the shape color", () => {
       const expected = `<polygon points="145,20 280,150 40,150" fill="Green"/>`;
       const shape = new Triangle();
-      shape.shapeColor = "Green";
+      shape.shapeColor = "Blue";
       expect(shape.formShape()).toEqual(expected);
     });
   });

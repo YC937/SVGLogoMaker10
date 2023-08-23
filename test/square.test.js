@@ -5,7 +5,7 @@ describe("Shape", () => {
     it("should set shape to square given the shape color", () => {
       const expected = `<rect x="70" y="20" width="160" height="160" fill="Blue"/>`;
       const shape = new Square();
-      shape.shapeColor = "Blue";
+      shape.shapeColor = "Red";
       expect(shape.formShape()).toEqual(expected);
     });
   });

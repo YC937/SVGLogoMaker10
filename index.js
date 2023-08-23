@@ -1,19 +1,17 @@
-//Module Dependencies 
 const fs = require("fs");
 const inquirer = require("inquirer");
-const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
+const MaxLenInpProm = require('inquirer-maxlength-input-prompt');
 const Circle = require("./shapes/circle");
 const Triangle = require("./shapes/triangle");
 const Square = require("./shapes/square");
 
 
-
-//Initial function.
+//Init function.
 function init () {
     console.log(`\nHi! This is the shape and text generator!
     \nFollow the instructions to generate a new logo.\n`);
 
-    inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);
+    inquirer.registerPrompt('maxlength-input', MaxLenInpProm);
 
     inquirer.prompt([
         {
@@ -25,7 +23,7 @@ function init () {
         {
             type: 'input',
             name: 'textColor',
-            message: `2) Pick a color for your charachters. (ex: type in "blue" or "#0000FF"):`,
+            message: `2) Pick a color for your charachters. (ex: type in "blue"):`,
         },
         {
             type: "list",
@@ -36,7 +34,7 @@ function init () {
         {
             type: "input",
             name: "shapeColor",
-            message: `4) Pick a shape color. (type in 'red' or '#FF0000'):`
+            message: `4) Pick a shape color. (type in 'red'):`
         },
         
     ]).then(answers => next(answers)) 
@@ -48,31 +46,31 @@ init();
 function next(answers) {
     switch (answers.shape) {
     case "triangle":
-      const newTriangle = new Triangle(
+      const newTria = new Triangle(
         answers.textLogo, 
         answers.textColor, 
         answers.shape, 
         answers.shapeColor
         );
 
-        console.log(newTriangle);
-      fs.writeFile("./svg/triangle.svg", newTriangle.formLogo(), (err) => {
+        console.log(newTria);
+      fs.writeFile("./svg/triangle.svg", newTria.formLogo(), (err) => {
         err
           ? console.err(err)
           : console.log(`\nGenerated ${answers.shape}.svg!\n`);
       });
       break;
     case "circle":
-      const newCircle = new Circle(
+      const newCir = new Circle(
         answers.textLogo, 
         answers.textColor, 
         answers.shape, 
         answers.shapeColor
       );
-      console.log(newCircle);
+      console.log(newCir);
       fs.writeFile(
         "./svg/circle.svg",
-        newCircle.formLogo(),
+        newCir.formLogo(),
         (err) => {
           err
             ? console.err(err)
@@ -81,14 +79,14 @@ function next(answers) {
       );
       break;
     default:
-      const newSquare = new Square(
+      const newSqu = new Square(
         answers.textLogo, 
         answers.textColor, 
         answers.shape, 
         answers.shapeColor
       );
-      console.log(newSquare)
-      fs.writeFile("./svg/square.svg", newSquare.formLogo(), (err) => {
+      console.log(newSqu)
+      fs.writeFile("./svg/square.svg", newSqu.formLogo(), (err) => {
         err
           ? console.err(err)
           : console.log(`\nGenerated ${answers.shape}.svg!\n`);
