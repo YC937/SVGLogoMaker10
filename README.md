@@ -6,15 +6,15 @@ In this project polymorphism by creating parent and child class constructors in 
 
 
 ## 
-Link to the screen recording: https://drive.google.com/file/d/1XLN9GeZuLIA5E9Z44qIU8QLspgJHy8_S/view?usp=sharing
 
+Demo video:
 
 https://github.com/YC937/SVGLogoMaker10/assets/127798660/56cc3252-19f0-48d0-a71c-65d9af3e81e8
 
+Link to the video: https://drive.google.com/file/d/1XLN9GeZuLIA5E9Z44qIU8QLspgJHy8_S/view?usp=sharing
 
 Link to the repository: https://github.com/YC937/SVGLogoMaker10
 
-Video file in this repository: ./assets/SVG1.mp4 
 
 ## License
 
